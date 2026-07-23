@@ -8,8 +8,7 @@ when:
 steps:
   - name: ci-pipeline
     image: induzio-ci-runner:latest
-    pull: false            # image is built locally on the agent server
-    privileged: true       # required for Docker-in-Docker
+    pull: false
 
     environment:
       GITHUB_TOKEN:
@@ -17,9 +16,6 @@ steps:
 
       SENDGRID_KEY:
         from_secret: sendgrid_key
-
-    volumes:
-      - /srv/ci-artifacts:/ci/artifacts
 
     commands:
       - bash /ci/scripts/entrypoint.sh
