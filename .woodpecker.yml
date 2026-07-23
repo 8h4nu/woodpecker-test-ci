@@ -1,16 +1,9 @@
 # =============================================================
 # .woodpecker.yml
-#
-# Every PR triggers ONE privileged DinD container that:
-#   - starts all DB services via docker compose
-#   - builds enclavemesh + izenclave
-#   - runs pytest smoke suite
-#   - sends email + updates GitHub PR status
-#   - destroys everything on exit (success or failure)
 # =============================================================
 
 when:
-  event: pull_request
+  event: [push, pull_request]
 
 steps:
   - name: ci-pipeline
