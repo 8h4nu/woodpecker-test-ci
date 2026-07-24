@@ -14,10 +14,5 @@ steps:
       GITHUB_TOKEN:
         from_secret: github_token
 
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /srv/ci-artifacts:/ci/artifacts
-      - /opt/intel/sgxsdk:/opt/intel/sgxsdk
-
     commands:
       - bash /ci/scripts/entrypoint.sh
