@@ -13,6 +13,8 @@ steps:
     environment:
       GITHUB_TOKEN:
         from_secret: github_token
+      SENDGRID_API_KEY:
+        from_secret: sendgrid_api_key
 
     commands:
       - bash /ci/scripts/entrypoint.sh
